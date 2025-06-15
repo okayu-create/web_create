@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+body {
+    background-color: #f4f9ff;
+    color: #2b2a27;
+    font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Meiryo", sans-serif;
+    font-size: 1.175rem;
+}
+img {
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+}
+h1 {
+    margin-bottom: 20px;
+}
+a {
+    color: #2b2a27;
+}
+
+.subcontent {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.content {
+    display: flex;
+    margin-bottom: 60px;
+}
+
+/*-----mainvisual-----*/
+.content .mainvisual {
+    width: 50%;
+}
+
+.content .mainvisual img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+/*-----recipe-----*/
+.content .recipe {
+    width: 50%;
+    padding: 40px 5% 0 5%;
+}
+.recipe h1 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+.recipe h2 {
+  border-bottom: solid 1px #ccc;
+  font-size: 1.25rem;
+  padding-bottom: 5px;
+  margin: 40px 0 15px 0;
+}
+.recipe .material {
+    display: flex;
+    flex-wrap: wrap;
+}
+.recipe .material dt {
+    width: 80%;
+    border-bottom: dotted 1px #ccc;
+    padding: 6px 0;
+}
+.recipe .material dd {
+    width: 15%;
+    border-bottom: dotted 1px #ccc;
+    padding: 6px 0;
+    text-align: right;
+}
+.recipe li {
+    border-bottom: dotted 1px #ccc;
+    padding: 6px 0;
+    margin-left: 20px;
+}
+
+/*-----link-----*/
+.link {
+    text-align: center;
+    margin-bottom: 80px;
+}
+.link a {
+  display: inline-block;
+  border: solid 1px #2b2a27;
+  font-size: 0.875rem;
+  padding: 18px 60px;
+  text-decoration: none;
+}
+
+/*-----footer-----*/
+#footer {
+    font-size: 0.875rem;
+    padding: 20px;
+    text-align: center;
+}
+#footer .sns {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+#footer .sns li {
+    margin: 0 20px;
+}
+
+
+/*-----RWD-----*/
+@media screen and (max-width: 834px) {
+    /*---mainvisual---*/
+    .content {
+        flex-direction: column;
+    }
+    .content .mainvisual {
+        width: 100%;
+    }
+    .content .mainvisual img {
+        height: auto;
+    }
+    .content .recipe {
+        width: 100%;
+    }
+    
+}
