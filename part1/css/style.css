@@ -125,25 +125,25 @@ li {
     }
 }
 
-/*-----bicycle-----*/
-#bicycle ul {
+/*-----works-----*/
+#works ul {
     display: flex;
     flex-wrap: wrap;
 }
 
-#bicycle li {
+#works li {
     margin-left: 10px;
     margin-bottom: 10px;
     width: 32%;
 }
 
 @media screen and (max-width: 600px) {
-    /*-----bicycle-----*/
-    #bicycle ul {
+    /*-----works-----*/
+    #works ul {
         flex-direction: column;
     }
 
-    #bicycle li {
+    #works li {
         width: 100%;
         margin-bottom: 30px;
     }
