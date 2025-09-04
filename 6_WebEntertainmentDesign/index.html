@@ -10,12 +10,12 @@
 <body>
     <header>
         <nav>
-            <div id="logo"><img src="img/logo.svg" alt="logo"></div>
+            <h1 id="logo"><img src="img/logo.svg" alt="logo"><span>Web Entertainment Design</span></h1>
             <ul>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">BUSINESS</a></li>
-                <li><a href="#">COMPANY</a></li>
+                <li><a href=".news">NEWS</a></li>
+                <li><a href=".about">ABOUT</a></li>
+                <li><a href=".business">BUSINESS</a></li>
+                <li><a href=".company">COMPANY</a></li>
             </ul>
         </nav>
         <a href="#">
@@ -25,7 +25,56 @@
         </a>
     </header>
     <main>
+        <img src="img/mainvisual.jpg" alt="mainvisual" id="mainvisual">
+        
+        <section id="news" class="section-content">
+            <div class="section-title">
+                <span>NEWS</span>
+                <p>ニュース</p>
+                <hr>
+            </div>
+            <div id="news-item">
+                <div class="item">
+                    <div class="date-title">
+                        <p class="date">2024.06.01</p>
+                        <p class="title">NEWS</p>
+                    </div>
+                    <p class="text">ニュース記事をここに記載</p>
+                </div>
+                <div class="item">
+                    <div class="date-title">
+                        <p class="date">2024.06.01</p>
+                        <p class="title">PRESS</p>
+                    </div>
+                    <p class="text">ニュース記事をここに記載</p>
+                </div>
+                <div class="item">
+                    <div class="date-title">
+                        <p class="date">2024.06.01</p>
+                        <p class="title">NEWS</p>
+                    </div>
+                    <p class="text">ニュース記事をここに記載</p>
+                </div>
+            </div>                                
+        </section>
 
+        <section id="about" class="section-content">
+            <div class="section-title">
+                <span>ABOUT</span>
+            </div>
+        </section>
+
+        <section id="business" class="section-content">
+            <div class="section-title">
+                <span>BUSINESS</span>
+            </div>
+        </section>
+
+        <section id="company" class="section-content">
+            <div class="section-title">
+                <span>COMPANY</span>
+            </div>
+        </section>
     </main>
 </body>
 </html>
