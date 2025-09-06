@@ -1,0 +1,84 @@
+/* -----------------------------
+リセットCSS
+-------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', 'Meiryo', sans-serif;
+    background: #fff;
+    color: #222;
+    line-height: 1.6;
+}
+header, main, footer {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*-----------------------------
+ ヘッダー 
+ ------------------------------*/
+header {
+    height: 80px; /* ヘッダーの高さを指定（必要に応じて調整） */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo {
+    width: 100px;
+    margin: 0 60px 0 100px;
+}
+nav {
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+#contact {
+    background-color: black;
+    width: 200px;
+    height: 80px;
+}
+#contact p {
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    font-size: 18px;
+}
+
+/* --------------------------
+レスポンシブ対応
+----------------------------- */
+@media screen and (max-width: 375px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start; /* 左寄せ */
+        padding-left: 16px; /* 左側に余白 */
+    }
+    #logo {
+        margin: 16px 0 8px 0;
+    }
+    nav ul {
+        flex-direction: row;
+        gap: 30px;
+        padding-left: 0; /* ul自体の左余白は不要 */
+    }
+    #contact {
+        display: none;
+    }
+}
