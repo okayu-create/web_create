@@ -19,11 +19,9 @@ li {
   list-style: none;
 }
 
-/* サイドメニューの横幅分だけ左にmarginをとる */
 .container {
   margin-left: 300px;
 }
-/* コンテンツ幅を設定するための共通クラス */
 .wrapper {
   max-width: 900px;
   padding: 80px 20px;
@@ -37,11 +35,7 @@ li {
 .site-title a {
   display: block;
 }
-/*
-セクションタイトル用の共通クラス
-両サイドの線は疑似要素で作成して、Flexboxで横並びに配置
-※beforeが左の線、afterが右の線
-*/
+
 .sec-title {
   display: flex;
   align-items: center;
@@ -60,16 +54,6 @@ li {
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
-/*
-サイドのロゴとグローバルナビゲーションは「header」タグで囲む
-※サイドに配置しているが、ロゴとグローバルナビゲーションを含んだヘッダー要素のため、
-「aside」タグではなく「header」タグを使用します。
-「aside」タグは、メインコンテンツとは直接関係ない補足的な情報をサイドバーとして配置する場合に使用します。
-例えば、Codejump内の「中級編：ブログサイト」のような使い方です。
-
-中級編：ブログサイト　デモ
-https://code-jump.com/demo/html/blog/
-*/
 #header {
   width: 300px;
   height: 100%;
@@ -77,7 +61,6 @@ https://code-jump.com/demo/html/blog/
   padding: 40px 50px 30px 45px;
   position: fixed;
   top: 0;
-  /* 画面の高さが低くてメニューが隠れてしまった場合に、縦スクロールが出るよう設定 */
   overflow-y: auto;
 }
 #header .nav-menu {
@@ -85,7 +68,11 @@ https://code-jump.com/demo/html/blog/
 }
 #header li {
   font-size: 0.875rem;
-  padding: 8px 0;
+  padding: 20px 0;
+}
+.nav-menu span {
+  font-size: 0.8em;
+  opacity: 0.6;
 }
 
 /*-------------------------------------------
@@ -95,13 +82,10 @@ Video
 動画を全画面表示
 */
 #video {
-  width: 1200px;
+  width: 100%;
   height: 100vh;
 }
-/*
-「position: fixed;」で動画を固定し、「top: -220px;」で表示位置を調整
-z-indexでマイナスを設定して、他のコンテンツの下に隠れるようにする
-*/
+
 #video .bg-video {
   position: fixed;
   top: -220px;
@@ -127,7 +111,6 @@ Project
   margin-bottom: 50px;
   position: relative;
 }
-/* 下段の2つはマージンを設定しない */
 #project .list li:last-child,
 #project .list li:nth-last-child(2) {
   margin-bottom: 0;
@@ -135,7 +118,6 @@ Project
 #project .list li a {
   display: block;
 }
-/* 疑似要素を使用して、テキストの下に「box-shadow」で影を付ける */
 #project .list li a::after {
   content: "";
   box-shadow: 0 -30px 15px -1px #2e2e2e inset;
@@ -157,7 +139,6 @@ Project
 /*-------------------------------------------
 Feature
 -------------------------------------------*/
-/* 背景に黒の透過を設定 */
 #feature {
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -172,17 +153,7 @@ Feature
   font-size: 0.875rem;
   text-align: center;
 }
-/*
-円を作成
 
-レスポンシブに対応した可変サイズの円を作成する場合は、
-widthに100%を設定して、paddingで上下を50%に設定
-今回は円の中にテキストが入っているのと、枠線をつけているため、
-50%から上下それぞれテキストの高さ（10px）とボーダー（1px）をマイナスしている
-※テキストの高さは、ディベロッパーツールで20pxと確認できるため、
-上下で分割してそれぞれ10pxとなる。
-
-*/
 #feature .list li a {
   width: 100%;
   border: solid 1px #fff;
@@ -193,13 +164,9 @@ widthに100%を設定して、paddingで上下を50%に設定
   margin-bottom: 15px;
   text-align: center;
   position: relative;
-  /* ホバー時用の要素を隠すために設定 */
   overflow: hidden;
 }
-/*
-ホバー時のスライドを疑似要素で作成
-「left: -100%;」で左側に隠しておく
-*/
+
 #feature .list li a::before {
   content: "";
   width: 100%;
@@ -211,7 +178,6 @@ widthに100%を設定して、paddingで上下を50%に設定
   opacity: 0.3;
   transition: 0.5s;
 }
-/* ホバー時に「left: 0;」を設定して右に移動させる */
 #feature .list li a:hover::before {
   left: 0;
 }
@@ -235,7 +201,6 @@ Flow
 #flow .figure {
   position: relative;
 }
-/* 図形下の黄色い棒線を作成 */
 #flow .figure::before {
   content: "";
   width: 50px;
@@ -245,9 +210,7 @@ Flow
   top: 0;
   left: 75px;
 }
-/*
-図形の四角部分を作成
-*/
+
 #flow .figure li {
   width: 200px;
   height: 80px;
@@ -259,10 +222,7 @@ Flow
   position: relative;
   text-align:center;
 }
-/*
-図形の三角部分を疑似要素で作成
-「position」を使用して、四角の下に配置
-*/
+
 #flow .figure li::before {
   content: "";
   border-top: 30px solid #414141;
@@ -287,11 +247,7 @@ Flow
   margin-bottom: 10px;
   position: relative;
 }
-/*
-丸数字を作成
-「position」を使用して、タイトルの左側に配置
-*/
-#flow .description dt span {
+.description dt span {
   width: 35px;
   height: 35px;
   line-height: 35px;
@@ -342,11 +298,7 @@ Contact
   right: 4px;
   bottom: 4px;
 }
-/*
-ホバー時は枠線を太くする
-「border」ではなく「outline」を使用することで、ホバー時にレイアウトがずれるのを防ぎます。
-※詳細を知りたい方は、borderとoutlineの違いについて検索してみてください。
-*/
+
 #contact .link .item:hover {
   outline: solid 3px #121212;
 }
@@ -386,10 +338,7 @@ Contact
 /*-------------------------------------------
 トップへ戻るボタン
 -------------------------------------------*/
-/*
-右下に固定で配置
-表示・非表示の切り替えはjQueryで行うため、詳細は「main.js」のコメントを参照
-*/
+
 #to-top {
   width: 50px;
   height: 50px;
@@ -400,9 +349,7 @@ Contact
   right: 25px;
   bottom: 25px;
 }
-/*
-中の三角は疑似要素で作成
-*/
+
 #to-top::after {
   content: "";
   border-left: 7px solid transparent;
@@ -448,10 +395,7 @@ SP
     padding: 0;
     z-index: 10;
   }
-  /*
-  ハンバーガーメニュー
-  ※ハンバーガーメニューの説明は他の課題と重複するため割愛
-  */
+
   #navi {
     width: 300px;
     background: #fff;
@@ -593,18 +537,11 @@ SP
     right: 0;
     margin: 0 auto;
   }
-  /*
-  図形（四角部分）の横幅を、画面幅から80pxマイナスしてサイズを調整
-  ※80pxは任意の数値ですので、図形をもっと小さくして横の余白とりたい場合は、
-  ここの数値を大きくする等して調整が可能です。
-  */
+
   #flow .figure li {
     width: calc(100vw - 80px);
   }
-  /*
-  図形（三角部分）の横幅を設定
-  ※上記同様、図形のサイズにあわせて調整を行う
-  */
+
   #flow .figure li::before {
     border-left: calc(50vw - 40px) solid transparent;
     border-right: calc(50vw - 40px) solid transparent;
