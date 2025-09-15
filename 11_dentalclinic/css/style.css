@@ -94,36 +94,36 @@ Video
 }
 
 /*-------------------------------------------
-Project
+examination
 -------------------------------------------*/
 /* 背景に水色の透過グラデーションを設定 */
-#project {
+#examination {
   background: linear-gradient(rgba(0,0,0,0),rgba(114, 210, 255,0.4));
   color: #444444;
 }
-#project .list {
+#examination .list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-#project .list li {
+#examination .list li {
   width: 47%;
   border: solid 1px #fff;
   margin-bottom: 50px;
   position: relative;
 }
-#project .list li:last-child,
-#project .list li:nth-last-child(2) {
+#examination .list li:last-child,
+#examination .list li:nth-last-child(2) {
   margin-bottom: 0;
 }
-#project .list li a {
+#examination .list li a {
   display: block;
 }
-#project .list li a:hover {
+#examination .list li a:hover {
   transform: scale(1.05);
   transition: 0.3s;
 }
-#project .list li a::after {
+#examination .list li a::after {
   content: "";
   box-shadow: 0 -30px 15px -1px rgba(255, 255, 255, 0.6) inset;
   position: absolute;
@@ -132,7 +132,7 @@ Project
   right: 0;
   bottom: 0;
 }
-#project .list .name {
+#examination .list .name {
   color: #444444;
   /* text-shadow: #fff 1px 1px; */
   font-size: 1.2rem;
@@ -152,14 +152,16 @@ staff
 }
 #staff .list {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #staff .list li {
   width: 30%;
-  font-size: 0.875rem;
+  font-size: 1.0rem;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px;
   text-align: center;
 }
-
 #staff .list li img {
   width: 100%;
   border: solid 1px #fff;
@@ -170,16 +172,24 @@ staff
   position: relative;
   overflow: hidden;
 }
-
 #staff .list li img:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
-#staff .list .title {
+#staff .list .name {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 5px;
 }
+#staff .list .Treatment,.hobby {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+#staff .list .Treatment-content {
+  margin-bottom: 20px;
+}
+
 
 /*-------------------------------------------
 Flow
@@ -263,18 +273,20 @@ Flow
 }
 
 /*-------------------------------------------
-Contact
+reservation
 -------------------------------------------*/
-#contact {
+#reservation {
   background-color: #fff;
   padding-bottom: 80px;
+  text-align: center;
 }
-#contact .link {
+#reservation .link {
   display: flex;
-  justify-content: space-between;
+  gap: 50px;
+  justify-content: center;
   margin-top: 60px;
 }
-#contact .link .item {
+#reservation .link .item {
   width: 30%;
   border: solid 1px #121212;
   display: block;
@@ -284,7 +296,10 @@ Contact
   text-align: center;
   transition: 0.1s;
 }
-#contact .link .item::before {
+#reservation .link .item img{
+  width: 64px;
+}
+#reservation .link .item::before {
   content: "";
   border-top: 20px solid transparent;
   border-right: 20px solid #121212;
@@ -293,12 +308,19 @@ Contact
   bottom: 4px;
 }
 
-#contact .link .item:hover {
+#reservation .link .item:hover {
   outline: solid 3px #121212;
 }
-#contact .link .item img {
+#reservation .link .item img {
   margin-bottom: 5px;
 }
+
+/*-------------------------------------------
+アクセス
+-------------------------------------------*/
+
+
+
 
 /*-------------------------------------------
 フッター
@@ -489,16 +511,16 @@ SP
   }
 
   /*-------------------------------------------
-  Project
+  examination
   -------------------------------------------*/
-  #project .list {
+  #examination .list {
     flex-direction: column;
   }
-  #project .list li {
+  #examination .list li {
     width: 100%;
     margin-bottom: 30px;
   }
-  #project .list li:nth-last-child(2) {
+  #examination .list li:nth-last-child(2) {
     margin-bottom: 30px;
   }
 
@@ -508,6 +530,16 @@ SP
   #staff {
     padding-bottom: 60px;
   }
+  .list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list li {
+    width: 60% !important;
+    margin-bottom: 20px;
+  }
+
 
   /*-------------------------------------------
   Flow
@@ -545,21 +577,21 @@ SP
   }
 
   /*-------------------------------------------
-  Contact
+  reservation
   -------------------------------------------*/
-  #contact {
+  #reservation {
     padding-bottom: 60px;
   }
-  #contact .link {
+  #reservation .link {
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
   }
-  #contact .link .item {
+  #reservation .link .item {
     width: 60%;
     margin: 20px 0 0 0;
   }
-  #contact .link .item:first-child {
+  #reservation .link .item:first-child {
     margin-top: 0;
   }
 
