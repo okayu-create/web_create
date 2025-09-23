@@ -176,60 +176,6 @@ examination
 }
 
 /*-------------------------------------------
-about-clinic
--------------------------------------------*/
-#about-clinic {
-  background-color: #fff;
-  color: #444444;
-}
-#about-clinic .img-box {
-  position: relative;
-}
-#about-clinic .bg-img {
-  width: 100%;
-  height: calc(100vh - 80px);
-  object-fit: cover;
-}
-#about-clinic .sub-title,.main-title,.main-text {
-  position: absolute;
-  color: #121212;
-  background: rgba(255,255,255,0.5);
-  padding: 8px 16px;
-  font-size: 1.2rem;
-  border-radius: 8px;
-}
-#about-clinic .sub-title {
-  top: 100px;
-  left: 20px;
-  letter-spacing: 0.3em;
-}
-#about-clinic .main-title {
-  top: 200px;
-  left: 20px;
-  font-size: 1.5rem;
-  letter-spacing: 0.5em;
-}
-#about-clinic .main-text {
-  bottom: 80px;
-  left: 20px;
-  right: 20px;
-  line-height: 200%;
-}
-#about-clinic .greeting {
-  margin-top: 32px;
-  text-align: center;
-}
-#about-clinic .greeting img {
-  width: 50%;
-  margin-top: 12px;
-  margin-bottom: 32px;
-}
-#about-clinic .greeting p {
-  line-height: 200%;
-  margin-bottom: 20px;
-}
-
-/*-------------------------------------------
 staff
 -------------------------------------------*/
 #staff {
@@ -276,7 +222,6 @@ staff
 #staff .list .Treatment-content {
   margin-bottom: 20px;
 }
-
 
 /*-------------------------------------------
 Flow
@@ -394,12 +339,79 @@ reservation
 }
 
 /*-------------------------------------------
-アクセス
+access
 -------------------------------------------*/
 #access {
   background-color: #fff;
   padding-bottom: 80px;
   text-align: center;
+}
+
+/*-------------------------------------------
+about-clinic
+-------------------------------------------*/
+#about-clinic {
+  background-color: #fff;
+  color: #444444;
+}
+#about-clinic .img-box {
+  position: relative;
+}
+#about-clinic .bg-img {
+  width: 100%;
+  height: calc(100vh - 80px);
+  object-fit: cover;
+}
+#about-clinic .sub-title,.main-title,.main-text {
+  position: absolute;
+  color: #121212;
+  background: rgba(255,255,255,0.5);
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+#about-clinic .sub-title {
+  top: 100px;
+  left: 20px;
+  letter-spacing: 0.3em;
+}
+#about-clinic .main-title {
+  top: 200px;
+  left: 20px;
+  font-size: 1.5rem;
+  letter-spacing: 0.5em;
+}
+#about-clinic .main-text {
+  bottom: 80px;
+  left: 20px;
+  right: 20px;
+  line-height: 200%;
+}
+#about-clinic .greeting {
+  display: flex;
+  gap: 20px;
+  margin-top: 32px;
+  /* text-align: center; */
+}
+#about-clinic .greeting .left-content {
+  width: 35%;
+}
+#about-clinic .greeting .right-content {
+  width: 65%;
+  padding-top: 25px;
+}
+#about-clinic .greeting img {
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+#about-clinic .greeting p {
+  line-height: 200%;
+  margin-bottom: 20px;
+}
+#about-clinic .greeting span {
+  font-weight: bold;
+  color: #799EFF;
 }
 
 /*-------------------------------------------
@@ -584,12 +596,16 @@ SP
   }
   #mainvisual .bg-video {
     width: 100%;
+    height: calc(100vh - 72px);
+    object-fit: cover;
     top: 72px;
     left: 0;
     margin: 0 auto;
   }
   #mainvisual .bg-img {
     width: 100%;
+    height: calc(100vh - 72px);
+    object-fit: cover;
     top: 72;
     left: 0;
     margin: 0 auto;
@@ -603,7 +619,7 @@ SP
   }
   #examination .list li {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
   #examination .list li:nth-last-child(2) {
     margin-bottom: 30px;
@@ -679,6 +695,19 @@ SP
   #reservation .link .item:first-child {
     margin-top: 0;
   }
+
+  /*-------------------------------------------
+  access
+  -------------------------------------------*/
+  #access .map iframe{
+    width: 80vw;
+    height: 80vw;
+    min-width: 200px;
+  }
+
+  /*-------------------------------------------
+  about-clinic
+  -------------------------------------------*/
 
   /*-------------------------------------------
   footer
