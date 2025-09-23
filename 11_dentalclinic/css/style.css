@@ -20,7 +20,7 @@ li {
 }
 
 .container {
-  margin-left: 300px;
+  margin-left: 250px;
 }
 .wrapper {
   max-width: 900px;
@@ -53,13 +53,13 @@ li {
 }
 
 /*-------------------------------------------
-ヘッダー
+header
 -------------------------------------------*/
 #header {
-  width: 300px;
+  width: 250px;
   height: 100%;
   background-color: #fff;
-  padding: 40px 50px 30px 45px;
+  padding: 40px 50px 30px 30px;
   position: fixed;
   top: 0;
   overflow-y: auto;
@@ -77,21 +77,61 @@ li {
 }
 
 /*-------------------------------------------
-Video
+mainvisual
 -------------------------------------------*/
-/*
-動画を全画面表示
-*/
-#video {
+#mainvisual {
+  position: relative;
   width: 100%;
   height: 100vh;
 }
-
-#video .bg-video {
+#mainvisual .bg-video {
   position: fixed;
+  left: -50px;
   top: -220px;
   z-index: -10;
 }
+#mainvisual .bg-img {
+  position: fixed;
+  left: 80px;
+  top: 0px;
+  z-index: -10;
+}
+#mainvisual .main-title {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  color: #121212;
+  text-shadow: #ecfbff 1px 1px;
+  text-align: left;
+  letter-spacing: 0.5em;
+  position: absolute;
+  left: 30px;
+  top: 50px;
+}
+#mainvisual .main-title span {
+  font-size: 0.9rem;
+}
+#mainvisual .main-text {
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  text-shadow: #000 1px 1px;
+  text-align: left;
+  line-height: normal;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+#mainvisual .main-text h2 span {
+  font-size: 1.0rem;
+}
+
+/*-------------------------------------------
+about
+-------------------------------------------*/
+
+
 
 /*-------------------------------------------
 examination
@@ -108,8 +148,8 @@ examination
 }
 #examination .list li {
   width: 47%;
-  border: solid 1px #fff;
   margin-bottom: 50px;
+  box-shadow: #000 1px 1px 5px;
   position: relative;
 }
 #examination .list li:last-child,
@@ -119,7 +159,7 @@ examination
 #examination .list li a {
   display: block;
 }
-#examination .list li a:hover {
+#examination .list li:hover {
   transform: scale(1.05);
   transition: 0.3s;
 }
@@ -294,10 +334,14 @@ reservation
   position: relative;
   padding: 50px 0;
   text-align: center;
-  transition: 0.1s;
+  transition: 0.5s;
 }
 #reservation .link .item img{
   width: 64px;
+  margin-bottom: 30px;
+}
+#reservation .link .item span{
+  font-size: 1.3rem;
 }
 #reservation .link .item::before {
   content: "";
@@ -307,12 +351,8 @@ reservation
   right: 4px;
   bottom: 4px;
 }
-
 #reservation .link .item:hover {
   outline: solid 3px #121212;
-}
-#reservation .link .item img {
-  margin-bottom: 5px;
 }
 
 /*-------------------------------------------
@@ -325,10 +365,10 @@ reservation
 }
 
 /*-------------------------------------------
-フッター
+footer
 -------------------------------------------*/
 #footer {
-  background-color: #121212;
+  background-color: rgba(0,0,0,0.6);
   color: #fff;
   padding: 20px 0;
 }
@@ -405,7 +445,7 @@ SP
   }
 
   /*-------------------------------------------
-  ヘッダー
+  header
   -------------------------------------------*/
   #header {
     width: 100%;
@@ -496,19 +536,24 @@ SP
   }
 
   /*-------------------------------------------
-  Video
+  mainvisual
   -------------------------------------------*/
   /*
   スマホの場合は、動画が見切れすぎないよう高さを調整
   */
-  #video {
+  #mainvisual {
     height: 80vh;
   }
-  #video .bg-video {
-    height: 520px;
+  #mainvisual .bg-video {
+    width: 100%;
     top: 72px;
     left: 0;
-    right: 0;
+    margin: 0 auto;
+  }
+  #mainvisual .bg-img {
+    width: 100%;
+    top: 72;
+    left: 0;
     margin: 0 auto;
   }
 
@@ -598,7 +643,7 @@ SP
   }
 
   /*-------------------------------------------
-  フッター
+  footer
   -------------------------------------------*/
   #footer .menu {
     flex-wrap: wrap;
