@@ -24,7 +24,7 @@ li {
 }
 .wrapper {
   max-width: 900px;
-  padding: 80px 20px;
+  padding: 60px 20px;
   margin: 0 auto;
 }
 .site-title {
@@ -56,10 +56,10 @@ li {
 header
 -------------------------------------------*/
 #header {
-  width: 250px;
+  width: 20%;
   height: 100%;
   background-color: #fff;
-  padding: 40px 50px 30px 30px;
+  padding: 40px 50px 30px 20px;
   position: fixed;
   top: 0;
   overflow-y: auto;
@@ -128,12 +128,6 @@ mainvisual
 }
 
 /*-------------------------------------------
-about
--------------------------------------------*/
-
-
-
-/*-------------------------------------------
 examination
 -------------------------------------------*/
 /* 背景に水色の透過グラデーションを設定 */
@@ -174,12 +168,65 @@ examination
 }
 #examination .list .name {
   color: #444444;
-  /* text-shadow: #fff 1px 1px; */
   font-size: 1.2rem;
   position: absolute;
   bottom: 4px;
   left: 7px;
   z-index: 5;
+}
+
+/*-------------------------------------------
+about-clinic
+-------------------------------------------*/
+#about-clinic {
+  background-color: #fff;
+  color: #444444;
+}
+#about-clinic .img-box {
+  position: relative;
+}
+#about-clinic .bg-img {
+  width: 100%;
+  height: calc(100vh - 80px);
+  object-fit: cover;
+}
+#about-clinic .sub-title,.main-title,.main-text {
+  position: absolute;
+  color: #121212;
+  background: rgba(255,255,255,0.5);
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+#about-clinic .sub-title {
+  top: 100px;
+  left: 20px;
+  letter-spacing: 0.3em;
+}
+#about-clinic .main-title {
+  top: 200px;
+  left: 20px;
+  font-size: 1.5rem;
+  letter-spacing: 0.5em;
+}
+#about-clinic .main-text {
+  bottom: 80px;
+  left: 20px;
+  right: 20px;
+  line-height: 200%;
+}
+#about-clinic .greeting {
+  margin-top: 32px;
+  text-align: center;
+}
+#about-clinic .greeting img {
+  width: 50%;
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+#about-clinic .greeting p {
+  line-height: 200%;
+  margin-bottom: 20px;
 }
 
 /*-------------------------------------------
@@ -245,21 +292,12 @@ Flow
 #flow .figure {
   position: relative;
 }
-#flow .figure::before {
-  content: "";
-  width: 50px;
-  height: 600px;
-  background-color: #ffdd00;
-  position: absolute;
-  top: 0;
-  left: 75px;
-}
 
 #flow .figure li {
   width: 200px;
   height: 80px;
   line-height: 80px;
-  background-color: #414141;
+  background-color: #799EFF;
   color: #fff;
   font-size: 0.875rem;
   margin-bottom: 60px;
@@ -269,7 +307,7 @@ Flow
 
 #flow .figure li::before {
   content: "";
-  border-top: 30px solid #414141;
+  border-top: 30px solid #787878;
   border-left: 100px solid transparent;
   border-right: 100px solid transparent;
   position: absolute;
