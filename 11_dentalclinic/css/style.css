@@ -20,7 +20,7 @@ li {
 }
 
 .container {
-  margin-left: 250px;
+  margin-left: 18%;
 }
 .wrapper {
   max-width: 900px;
@@ -56,19 +56,20 @@ li {
 header
 -------------------------------------------*/
 #header {
-  width: 20%;
+  width: 18%;
   height: 100%;
   background-color: #fff;
-  padding: 40px 50px 30px 20px;
+  padding: 25px 20px;
   position: fixed;
   top: 0;
   overflow-y: auto;
 }
-#header .nav-menu {
-  margin-bottom: 60px;
+#header .icon {
+  width: 100%;
+  margin: auto;
 }
 #header li {
-  font-size: 0.875rem;
+  font-size: 1.0rem;
   padding: 20px 0;
 }
 .nav-menu span {
@@ -80,9 +81,12 @@ header
 mainvisual
 -------------------------------------------*/
 #mainvisual {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   width: 100%;
   height: 100vh;
+  align-items: center;
 }
 #mainvisual .bg-video {
   position: fixed;
@@ -92,39 +96,35 @@ mainvisual
 }
 #mainvisual .bg-img {
   position: fixed;
-  left: 80px;
+  left: -50px;
   top: 0px;
   z-index: -10;
+  width: 100%;
+  height: calc(100vh - 150px);
+  object-fit: cover;
+}
+#mainvisual .sub-title,.main-title,.main-text {
+  width: fit-content;
+  color: #121212;
+  background: rgba(255,255,255,0.5);
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+#mainvisual .sub-title {
+  margin-top: 150px;
+  font-size: 1.5rem;
+  letter-spacing: 0.3em;
 }
 #mainvisual .main-title {
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
-  color: #121212;
-  text-shadow: #ecfbff 1px 1px;
-  text-align: left;
+  font-size: 2.0rem;
   letter-spacing: 0.5em;
-  position: absolute;
-  left: 30px;
-  top: 50px;
-}
-#mainvisual .main-title span {
-  font-size: 0.9rem;
+
 }
 #mainvisual .main-text {
-  width: 80%;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
-  color: #fff;
-  text-shadow: #000 1px 1px;
-  text-align: left;
-  line-height: normal;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
-#mainvisual .main-text h2 span {
-  font-size: 1.0rem;
+  font-size: 1.5rem;
+  line-height: 200%;
+  margin-top: 100px;
 }
 
 /*-------------------------------------------
@@ -354,39 +354,7 @@ about-clinic
   background-color: #fff;
   color: #444444;
 }
-#about-clinic .img-box {
-  position: relative;
-}
-#about-clinic .bg-img {
-  width: 100%;
-  height: calc(100vh - 80px);
-  object-fit: cover;
-}
-#about-clinic .sub-title,.main-title,.main-text {
-  position: absolute;
-  color: #121212;
-  background: rgba(255,255,255,0.5);
-  padding: 8px 16px;
-  font-size: 1.2rem;
-  border-radius: 8px;
-}
-#about-clinic .sub-title {
-  top: 100px;
-  left: 20px;
-  letter-spacing: 0.3em;
-}
-#about-clinic .main-title {
-  top: 200px;
-  left: 20px;
-  font-size: 1.5rem;
-  letter-spacing: 0.5em;
-}
-#about-clinic .main-text {
-  bottom: 80px;
-  left: 20px;
-  right: 20px;
-  line-height: 200%;
-}
+
 #about-clinic .greeting {
   display: flex;
   gap: 20px;
@@ -403,7 +371,6 @@ about-clinic
 #about-clinic .greeting img {
   width: 100%;
   margin-top: 12px;
-  margin-bottom: 32px;
 }
 #about-clinic .greeting p {
   line-height: 200%;
@@ -588,9 +555,6 @@ SP
   /*-------------------------------------------
   mainvisual
   -------------------------------------------*/
-  /*
-  スマホの場合は、動画が見切れすぎないよう高さを調整
-  */
   #mainvisual {
     height: 80vh;
   }
@@ -609,6 +573,13 @@ SP
     top: 72;
     left: 0;
     margin: 0 auto;
+  }
+  #mainvisual .sub-title,
+  #mainvisual .main-text {
+    font-size: 16px;
+  }
+  #mainvisual .main-title {
+    font-size: 20px;
   }
 
   /*-------------------------------------------
@@ -708,6 +679,17 @@ SP
   /*-------------------------------------------
   about-clinic
   -------------------------------------------*/
+  #about-clinic .greeting {
+    flex-direction: column;
+    align-items: center;
+  }
+  #about-clinic .greeting .left-content {
+    width: 60%;
+  }
+  #about-clinic .greeting .right-content {
+    width: 90%;
+    padding-top: 20px;
+  }
 
   /*-------------------------------------------
   footer
