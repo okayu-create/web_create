@@ -20,10 +20,10 @@ li {
 }
 
 .container {
-  margin-left: 250px;
+  margin-left: 18%;
 }
 .wrapper {
-  max-width: 900px;
+  max-width: 1000px;
   padding: 60px 20px;
   margin: 0 auto;
 }
@@ -56,19 +56,20 @@ li {
 header
 -------------------------------------------*/
 #header {
-  width: 20%;
+  width: 18%;
   height: 100%;
   background-color: #fff;
-  padding: 40px 50px 30px 20px;
+  padding: 25px 20px;
   position: fixed;
   top: 0;
   overflow-y: auto;
 }
-#header .nav-menu {
-  margin-bottom: 60px;
+#header .icon {
+  width: 100%;
+  margin: auto;
 }
 #header li {
-  font-size: 0.875rem;
+  font-size: 1.0rem;
   padding: 20px 0;
 }
 .nav-menu span {
@@ -80,9 +81,12 @@ header
 mainvisual
 -------------------------------------------*/
 #mainvisual {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   width: 100%;
   height: 100vh;
+  align-items: center;
 }
 #mainvisual .bg-video {
   position: fixed;
@@ -92,39 +96,35 @@ mainvisual
 }
 #mainvisual .bg-img {
   position: fixed;
-  left: 80px;
+  left: -50px;
   top: 0px;
   z-index: -10;
+  width: 100%;
+  height: calc(100vh - 150px);
+  object-fit: cover;
+}
+#mainvisual .sub-title,.main-title,.main-text {
+  width: fit-content;
+  color: #121212;
+  background: rgba(255,255,255,0.5);
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+#mainvisual .sub-title {
+  margin-top: 150px;
+  font-size: 1.5rem;
+  letter-spacing: 0.3em;
 }
 #mainvisual .main-title {
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
-  color: #121212;
-  text-shadow: #ecfbff 1px 1px;
-  text-align: left;
+  font-size: 2.0rem;
   letter-spacing: 0.5em;
-  position: absolute;
-  left: 30px;
-  top: 50px;
-}
-#mainvisual .main-title span {
-  font-size: 0.9rem;
+
 }
 #mainvisual .main-text {
-  width: 80%;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
-  color: #fff;
-  text-shadow: #000 1px 1px;
-  text-align: left;
-  line-height: normal;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
-#mainvisual .main-text h2 span {
-  font-size: 1.0rem;
+  font-size: 1.5rem;
+  line-height: 200%;
+  margin-top: 100px;
 }
 
 /*-------------------------------------------
@@ -151,7 +151,9 @@ examination
   margin-bottom: 0;
 }
 #examination .list li a {
+  position: relative;
   display: block;
+  overflow: hidden;
 }
 #examination .list li:hover {
   transform: scale(1.05);
@@ -168,59 +170,160 @@ examination
 }
 #examination .list .name {
   color: #444444;
+  font-weight: bold;
   font-size: 1.2rem;
   position: absolute;
   bottom: 4px;
   left: 7px;
   z-index: 5;
 }
+#examination .list .examination-text1 {
+  left: 0;
+  top: 30%;
+  width: 100%;
+}
+#examination .list .examination-text2 {
+  left: 0;
+  top: 50%;
+  width: 100%;
+}
+#examination .list .examination-text3 {
+  left: 0;
+  top: 70%;
+  width: 100%;
+}
+#examination .list .examination-text1,
+#examination .list .examination-text2,
+#examination .list .examination-text3 {
+  position: absolute;
+  transform: translateY(-50%);
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 10px 0;
+  pointer-events: none;
+}
+#examination .list li a:hover .examination-text1,
+#examination .list li a:hover .examination-text2,
+#examination .list li a:hover .examination-text3 {
+  opacity: 1;
+}
+#examination .list .detail {
+  line-height: 200%;
+  background-color: #fff;
+  font-size: 0.875rem;
+  padding: 5px;
+}
 
 /*-------------------------------------------
-staff
+concept
 -------------------------------------------*/
-#staff {
+#concept {
   background: rgba(114, 210, 255, 0.4);
   color: #444444;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
 }
-#staff .list {
+#concept .card {
+  width: 60%;
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 3%;
 }
-#staff .list li {
-  width: 30%;
-  font-size: 1.0rem;
-  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px;
-  text-align: center;
+#concept .card img {
+  width: auto;
+  height: 60px;
+  margin-right: 30px;
 }
-#staff .list li img {
-  width: 100%;
-  border: solid 1px #fff;
-  border-radius: 50%;
+#concept .card .title {
+  color: #ffa218;
   display: block;
-  margin-bottom: 15px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-#staff .list li img:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
-}
-#staff .list .name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-#staff .list .Treatment,.hobby {
-  font-weight: bold;
   font-size: 1.2rem;
-  margin-top: 10px;
+  font-weight: bold;
 }
-#staff .list .Treatment-content {
+#concept .card .text {
+  display: block;
+}
+#concept .concept-left,
+#concept .concept-right {
   margin-bottom: 20px;
+}
+#concept .concept-left {
+  margin-right: auto;
+}
+#concept .concept-right {
+  margin-left: auto;
+}
+
+/*-------------------------------------------
+news
+-------------------------------------------*/
+#news {
+  background-color: #f7fbff;
+  padding: 40px 0;
+}
+#news .news-list {
+  width: 90%;
+  margin: 0 auto;
+  border: none;
+  padding: 0;
+}
+#news .news-list li {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(2,137,255,0.08);
+  margin: 18px 0;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+  border: 1px solid #e3f4fd;
+  position: relative;
+}
+#news .news-list li:hover {
+  box-shadow: 0 4px 16px rgba(2,137,255,0.18);
+  transform: translateY(-3px) scale(1.02);
+  border-color: #0289FF;
+}
+#news .news-list span.date {
+  color: #0289FF;
+  font-weight: bold;
+  margin-right: 24px;
+  font-size: 0.95rem;
+  min-width: 90px;
+}
+#news .news-list span.category {
+  background: #e3f4fd;
+  color: #0289FF;
+  border-radius: 8px;
+  padding: 2px 12px;
+  font-size: 0.8rem;
+  margin-right: 18px;
+}
+#news .news-list .news-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #121212;
+  flex: 1;
+  transition: color 0.3s;
+}
+#news .news-list li:hover .news-title {
+  color: #0289FF;
+}
+#news .news-list .news-link-icon {
+  margin-left: 12px;
+  font-size: 1.2rem;
+  color: #0289FF;
+  transition: transform 0.3s;
+}
+#news .news-list li:hover .news-link-icon {
+  transform: translateX(4px);
 }
 
 /*-------------------------------------------
@@ -228,7 +331,6 @@ Flow
 -------------------------------------------*/
 #flow {
   background-color: #fff;
-  padding-top: 40px;
 }
 #flow .step {
   display: flex;
@@ -339,59 +441,17 @@ reservation
 }
 
 /*-------------------------------------------
-access
--------------------------------------------*/
-#access {
-  background-color: #fff;
-  padding-bottom: 80px;
-  text-align: center;
-}
-
-/*-------------------------------------------
 about-clinic
 -------------------------------------------*/
 #about-clinic {
   background-color: #fff;
   color: #444444;
 }
-#about-clinic .img-box {
-  position: relative;
-}
-#about-clinic .bg-img {
-  width: 100%;
-  height: calc(100vh - 80px);
-  object-fit: cover;
-}
-#about-clinic .sub-title,.main-title,.main-text {
-  position: absolute;
-  color: #121212;
-  background: rgba(255,255,255,0.5);
-  padding: 8px 16px;
-  font-size: 1.2rem;
-  border-radius: 8px;
-}
-#about-clinic .sub-title {
-  top: 100px;
-  left: 20px;
-  letter-spacing: 0.3em;
-}
-#about-clinic .main-title {
-  top: 200px;
-  left: 20px;
-  font-size: 1.5rem;
-  letter-spacing: 0.5em;
-}
-#about-clinic .main-text {
-  bottom: 80px;
-  left: 20px;
-  right: 20px;
-  line-height: 200%;
-}
+
 #about-clinic .greeting {
   display: flex;
   gap: 20px;
   margin-top: 32px;
-  /* text-align: center; */
 }
 #about-clinic .greeting .left-content {
   width: 35%;
@@ -403,7 +463,6 @@ about-clinic
 #about-clinic .greeting img {
   width: 100%;
   margin-top: 12px;
-  margin-bottom: 32px;
 }
 #about-clinic .greeting p {
   line-height: 200%;
@@ -415,10 +474,105 @@ about-clinic
 }
 
 /*-------------------------------------------
+about-stuff
+-------------------------------------------*/
+#about-stuff {
+  background-color: #fff;
+  color: #444444;
+}
+#about-stuff .intro {
+  display: block;
+  gap: 20px;
+}
+#about-stuff span {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  background-color: #0289FF;
+  color: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 30px;
+}
+#about-stuff .stuff-content {
+  display: flex;
+  gap: 20px;
+  margin-top: 32px;
+}
+#about-stuff .stuff-content .left-content {
+  width: 40%;
+}
+#about-stuff .stuff-content .left-content img {
+  width: 100%;
+  border: solid 1px #fff;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#about-stuff .stuff-content .right-content {
+  width: 60%;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+#about-stuff .stuff-content .right-content .message {
+  line-height: 200%;
+  margin-top: 20px;
+}
+
+/*-------------------------------------------
+guide
+-------------------------------------------*/
+#guide {
+  background-color: #fff;
+  color: #444444;
+}
+.consultation-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #fff;
+}
+.consultation-table th,
+.consultation-table td {
+  border: 1px solid #bcdffb;
+  padding: 8px 12px;
+  text-align: center;
+}
+.consultation-table th {
+  background: #e3f4fd;
+  color: #0289FF;
+}
+#guide span {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  background-color: #0289FF;
+  color: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 30px;
+}
+
+/*-------------------------------------------
+access
+-------------------------------------------*/
+#access {
+  background-color: #fff;
+  padding-bottom: 80px;
+}
+#access .map {
+  margin-top: 32px;
+}
+
+/*-------------------------------------------
 footer
 -------------------------------------------*/
 #footer {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,1);
   color: #fff;
   padding: 20px 0;
 }
@@ -429,7 +583,6 @@ footer
 }
 #footer .menu li {
   border-right: solid 1px #fff;
-  font-size: 0.875rem;
   padding: 0 20px;
 }
 #footer .menu li:last-child {
@@ -588,19 +741,12 @@ SP
   /*-------------------------------------------
   mainvisual
   -------------------------------------------*/
-  /*
-  スマホの場合は、動画が見切れすぎないよう高さを調整
-  */
-  #mainvisual {
-    height: 80vh;
-  }
   #mainvisual .bg-video {
     width: 100%;
-    height: calc(100vh - 72px);
+    height: calc(100vh - 100px);
     object-fit: cover;
     top: 72px;
     left: 0;
-    margin: 0 auto;
   }
   #mainvisual .bg-img {
     width: 100%;
@@ -609,6 +755,13 @@ SP
     top: 72;
     left: 0;
     margin: 0 auto;
+  }
+  #mainvisual .sub-title,
+  #mainvisual .main-text {
+    font-size: 16px;
+  }
+  #mainvisual .main-title {
+    font-size: 20px;
   }
 
   /*-------------------------------------------
@@ -626,21 +779,29 @@ SP
   }
 
   /*-------------------------------------------
-  staff
+  concept
   -------------------------------------------*/
-  #staff {
-    padding-bottom: 60px;
+    #concept {
+    padding-bottom: 30px;
   }
-  .list {
+  #concept .card {
+    width: 95%;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding: 18px 10px;
+    margin: 0 auto 18px auto;
   }
-
-  .list li {
-    width: 60% !important;
-    margin-bottom: 20px;
+  #concept .card img {
+    margin: 0 0 12px 0;
+    height: 48px;
   }
-
+  #concept .card .title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  #concept .card .text {
+    font-size: 0.95rem;
+  }
 
   /*-------------------------------------------
   Flow
@@ -656,15 +817,6 @@ SP
   #flow .figure {
     margin-bottom: 80px;
   }
-  /*
-  図形下の黄色い棒線を中央に配置
-  */
-  #flow .figure::before {
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-  }
-
   #flow .figure li {
     width: calc(100vw - 80px);
   }
@@ -675,6 +827,40 @@ SP
   }
   #flow .description {
     margin-left: 50px;
+  }
+
+  /*-------------------------------------------
+  news
+  -------------------------------------------*/
+
+    #news {
+    padding: 24px 0;
+  }
+  #news .news-list {
+    width: 98%;
+  }
+  #news .news-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 10px;
+    margin: 12px 0;
+    border-radius: 8px;
+  }
+  #news .news-list span.date,
+  #news .news-list span.category {
+    margin-right: 8px;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+  #news .news-list .news-title {
+    font-size: 1rem;
+    margin: 4px 0 0 0;
+    width: 100%;
+  }
+  #news .news-list .news-link-icon {
+    align-self: flex-end;
+    margin: 8px 0 0 0;
+    font-size: 1.1rem;
   }
 
   /*-------------------------------------------
@@ -697,8 +883,81 @@ SP
   }
 
   /*-------------------------------------------
+  about-clinic
+  -------------------------------------------*/
+  #about-clinic .greeting {
+    flex-direction: column;
+    align-items: center;
+  }
+  #about-clinic .greeting .left-content {
+    width: 80%;
+  }
+  #about-clinic .greeting .right-content {
+    width: 90%;
+    padding-top: 20px;
+  }
+
+  /*-------------------------------------------
+  about-stuff
+  -------------------------------------------*/
+  #about-stuff .intro {
+    gap: 10px;
+  }
+  #about-stuff .stuff-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-top: 40px;
+  }
+  #about-stuff .stuff-content .left-content {
+    width: 60%;
+    margin-bottom: 0;
+  }
+  #about-stuff .stuff-content .left-content img {
+    margin-bottom: 0;
+  }
+  #about-stuff .stuff-content .right-content {
+    width: 90%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  #about-stuff .stuff-content .right-content span {
+    display: block;
+    padding: 2px 0;
+    margin: 0 auto;
+  }
+  #about-stuff .stuff-content .right-content .message {
+    margin-top: 10px;
+  }
+
+  /*-------------------------------------------
+  guide
+  -------------------------------------------*/
+  #guide {
+    text-align: center;
+  }
+  #guide .consultation-table {
+    width: 100%;
+    font-size: 0.75rem;
+  }
+  #guide .consultation-table th,
+  #guide .consultation-table td {
+    padding: 6px 8px;
+  }
+  #guide span {
+    display: block;
+    width: 80px;
+    margin: 10px auto;
+  }
+
+  /*-------------------------------------------
   access
   -------------------------------------------*/
+  #access {
+    padding-bottom: 60px;
+    text-align: center;
+  }
   #access .map iframe{
     width: 80vw;
     height: 80vw;
@@ -706,16 +965,17 @@ SP
   }
 
   /*-------------------------------------------
-  about-clinic
-  -------------------------------------------*/
-
-  /*-------------------------------------------
   footer
   -------------------------------------------*/
   #footer .menu {
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
   }
   #footer .menu li {
     margin-bottom: 10px;
+  }
+  #footer .menu li {
+    border-right: none;
   }
 }
