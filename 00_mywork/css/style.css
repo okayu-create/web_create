@@ -41,30 +41,57 @@ li {
   gap: 10px;
   height: 100vh;
   grid-template: 
-    "header header" 80px
+    "nav mc" 80px
     "mv mc" 1fr
     "footer footer" 60px /
     1fr 1fr;
 }
 
 /*--------------------------------
- header
+ nav
 ---------------------------------*/
-.header {
-  grid-area: header;
+.gnav {
+  grid-area: nav;
   display: flex;
-  align-items:center;
-  
-}
-.header .container {
-  display: flex;
+  background-color: #f7f7f7;
+  justify-content: right;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
 }
 
-.header .logo img {
-  height: 80px;
+.gnav-list {
+  display: flex;
+  gap: 60px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gnav-item a {
+  position: relative;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 0;
+  color: #333;
+  text-decoration: none;
+  transition: color .3s;
+  letter-spacing: .05em;
+}
+
+.gnav-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: currentColor;
+  transform: translateX(-50%);
+  transition: width .3s;
+}
+
+.gnav-item a:hover::after {
+  width: 100%;
 }
 
 /*--------------------------------
