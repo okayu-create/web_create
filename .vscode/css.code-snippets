@@ -1,0 +1,41 @@
+{
+  "縦書きテキスト": {
+    "prefix": "tategaki",
+    "body": [
+      "writing-mode: vertical-rl;",
+      "text-orientation: upright;",
+      "letter-spacing: 0.6em;",
+      "line-height: 2;",
+      "font-weight: bold;",
+      "font-family: 'Zen Old Mincho', serif;"
+    ],
+    "description": "縦書きテキストの基本スタイル"
+  },
+
+  "ナビゲーションメニュー": {
+    "prefix": "gnav",
+    "body": [
+      ".gnav {",
+      "  display: flex;",
+      "  justify-content: center;",
+      "  background-color: #333;",
+      "}",
+      "",
+      ".gnav-item {",
+      "  margin: 0 15px;",
+      "}",
+      "",
+      ".gnav-item a {",
+      "  color: #fff;",
+      "  text-decoration: none;",
+      "  font-weight: bold;",
+      "  padding: 10px 15px;",
+      "}",
+      "",
+      ".gnav-item a:hover {",
+      "  background-color: #555;",
+      "}"
+    ],
+    "description": "グローバルナビゲーションメニューのスタイル"
+  }
+}
