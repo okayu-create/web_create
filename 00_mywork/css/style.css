@@ -113,11 +113,24 @@ li {
   height: 100%;
   background: url("../img/mv.jpg") no-repeat center/cover;
 }
-.mv-text1 {
-  position: absolute;
-  top: 40%;
-  right: 30%;
-  transform: translateY(-50%);
+
+/*--------------------------------
+ maincontent
+---------------------------------*/
+.mc {
+  grid-area: mc;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 24px;
+  overflow: auto;
+}
+.catchcopy {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 400px;
+  padding: 80px 20px;
+}
+.catchcopy-text {
   writing-mode: vertical-rl;
   text-orientation: upright;
   font-family: 'zen old mincho', serif;
@@ -125,31 +138,10 @@ li {
   font-weight: bold;
   letter-spacing: 0.6em;
   line-height: 2;
-  color: #fff;
-
+  color: #121212;
   width: max-content;
   height: max-content;
-
-  /* 読みやすくする工夫 ↓ */
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.6); /* 文字の影で視認性UP */
-  background: rgba(0, 0, 0, 0.3); /* 半透明の背景 */
-  padding: 10px 15px;
-  border-radius: 8px;
 }
-
-
-/*--------------------------------
- maincontent
----------------------------------*/
-.mc {
-  grid-area: mc;
-  background-color: #88ffac;
-  padding: 40px 0;
-  text-align: center;
-  font-size: 24px;
-  overflow: auto;
-  color: #fff;
-  }
 
 /*--------------------------------
  footer
