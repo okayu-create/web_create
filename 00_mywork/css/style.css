@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+font-family: "Playfair Display", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho Medium", serif;
   font-size: 15px;
   letter-spacing: .05em;
   color: #333;
@@ -12,7 +12,7 @@ body {
 a {
   transition: opacity .3s;
   text-decoration: none;
-  color: #1ca9e3;
+  color: #511ce3;
 }
 
 img {
@@ -31,6 +31,20 @@ li {
 }
 .sp-only {
   display: none;
+}
+.sec-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.75rem;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.sec-title::before,
+.sec-title::after {
+  border-top: 1px solid;
+  content: "";
+  width: 30%;
 }
 
 /*--------------------------------
@@ -56,7 +70,6 @@ li {
   justify-content: flex-start;
   align-items: center;
 }
-
 .gnav-list {
   display: flex;
   align-items: center;
@@ -64,11 +77,9 @@ li {
   padding: 0 40px;
   width: 100%;
 }
-
 .gnav-item:last-child {
   margin-left: auto; /* ← 最後の要素を右端へ押し出す */
 }
-
 .gnav-item a {
   position: relative;
   font-size: 18px;
@@ -80,7 +91,6 @@ li {
   transition: color .3s;
   letter-spacing: .05em;
 }
-
 .gnav-item a::after {
   content: "";
   position: absolute;
@@ -92,7 +102,6 @@ li {
   transform: translateX(-50%);
   transition: width .3s;
 }
-
 .gnav-item a:hover::after {
   width: 100%;
 }
@@ -124,13 +133,14 @@ li {
   font-size: 24px;
   overflow: auto;
 }
-.catchcopy {
+.mc .catchcopy {
+  position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: 400px;
   padding: 80px 20px;
 }
-.catchcopy-text {
+.mc .catchcopy-text {
   writing-mode: vertical-rl;
   text-orientation: upright;
   font-family: 'zen old mincho', serif;
@@ -142,6 +152,81 @@ li {
   width: max-content;
   height: max-content;
 }
+/* スクロールアニメーション全体の位置調整 */
+.scroll {
+  position: absolute;
+  bottom: 0px;        /* catchcopyの下から0px */
+  left: 50%;
+  transform: translateX(-50%); /* 水平中央寄せ */
+  writing-mode: vertical-rl;
+  font-size: 12px;
+  color: #333;
+  z-index: 10;
+}
+
+/* 線のアニメーション部分 */
+.scroll::before {
+  animation: scroll 2s infinite;
+  background-color: #333;
+  top: 100%;           /* scrollテキストの下に配置 */
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  height: 40px;
+  position: absolute;
+  width: 1px;
+  z-index: 2;
+}
+
+/* 線の背景色 */
+.scroll::after {
+  background-color: #ccc;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  height: 40px;
+  position: absolute;
+  width: 1px;
+  z-index: 1;
+}
+
+/* 線のアニメーション */
+@keyframes scroll {
+  0% {
+    transform: translateX(-50%) scale(1, 0);
+    transform-origin: center top;
+  }
+  50% {
+    transform: translateX(-50%) scale(1, 1);
+    transform-origin: center top;
+  }
+  51% {
+    transform: translateX(-50%) scale(1, 1);
+    transform-origin: center bottom;
+  }
+  100% {
+    transform: translateX(-50%) scale(1, 0);
+    transform-origin: center bottom;
+  }
+}
+.mc .works-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 0 20px;
+}
+.mc .works-list img {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform .3s, box-shadow .3s;
+  margin-bottom: 15px;
+}
+.mc .works-list img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
 
 /*--------------------------------
  footer
