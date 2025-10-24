@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-family: "Playfair Display", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho Medium", serif;
   font-size: 15px;
   letter-spacing: .05em;
   color: #333;
@@ -12,7 +12,6 @@ body {
 a {
   transition: opacity .3s;
   text-decoration: none;
-  color: #1ca9e3;
 }
 
 img {
@@ -32,6 +31,20 @@ li {
 .sp-only {
   display: none;
 }
+.sec-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.75rem;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.sec-title::before,
+.sec-title::after {
+  border-top: 1px solid;
+  content: "";
+  width: 30%;
+}
 
 /*--------------------------------
  layout
@@ -43,7 +56,7 @@ li {
   grid-template: 
     "nav mc" 80px
     "mv mc" 1fr
-    "footer footer" 60px /
+    "footer mc" 40px /
     1fr 1fr;
 }
 
@@ -56,7 +69,6 @@ li {
   justify-content: flex-start;
   align-items: center;
 }
-
 .gnav-list {
   display: flex;
   align-items: center;
@@ -64,11 +76,9 @@ li {
   padding: 0 40px;
   width: 100%;
 }
-
 .gnav-item:last-child {
-  margin-left: auto; /* ← 最後の要素を右端へ押し出す */
+  margin-left: auto;
 }
-
 .gnav-item a {
   position: relative;
   font-size: 18px;
@@ -80,7 +90,6 @@ li {
   transition: color .3s;
   letter-spacing: .05em;
 }
-
 .gnav-item a::after {
   content: "";
   position: absolute;
@@ -92,7 +101,6 @@ li {
   transform: translateX(-50%);
   transition: width .3s;
 }
-
 .gnav-item a:hover::after {
   width: 100%;
 }
@@ -105,7 +113,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 90px - 70px);
+  height: calc(100vh - 90px - 50px);
 }
 .mv-container {
   position: relative;
@@ -113,43 +121,124 @@ li {
   height: 100%;
   background: url("../img/mv.jpg") no-repeat center/cover;
 }
-.mv-text1 {
-  position: absolute;
-  top: 40%;
-  right: 30%;
-  transform: translateY(-50%);
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-family: 'zen old mincho', serif;
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 0.6em;
-  line-height: 2;
-  color: #fff;
-
-  width: max-content;
-  height: max-content;
-
-  /* 読みやすくする工夫 ↓ */
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.6); /* 文字の影で視認性UP */
-  background: rgba(0, 0, 0, 0.3); /* 半透明の背景 */
-  padding: 10px 15px;
-  border-radius: 8px;
-}
-
 
 /*--------------------------------
  maincontent
 ---------------------------------*/
 .mc {
   grid-area: mc;
-  background-color: #88ffac;
+  font-family: 'zen old mincho', serif;
   padding: 40px 0;
   text-align: center;
   font-size: 24px;
   overflow: auto;
-  color: #fff;
+}
+.mc .catchcopy {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 400px;
+  padding: 80px 20px;
+}
+.mc .catchcopy-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.6em;
+  line-height: 2;
+  color: #121212;
+  width: max-content;
+  height: max-content;
+}
+/* スクロールアニメーション全体の位置調整 */
+.scroll {
+  position: absolute;
+  bottom: 0px;        /* catchcopyの下から0px */
+  left: 50%;
+  transform: translateX(-50%); /* 水平中央寄せ */
+  writing-mode: vertical-rl;
+  font-size: 16px;
+  color: #333;
+  z-index: 10;
+}
+
+/* 線のアニメーション部分 */
+.scroll::before {
+  animation: scroll 2s infinite;
+  background-color: #333;
+  top: 120%;           /* scrollテキストの下に配置 */
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  height: 50px;
+  position: absolute;
+  width: 1.3px;
+  z-index: 2;
+}
+
+/* 線の背景色 */
+.scroll::after {
+  background-color: #ccc;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  height: 50px;
+  position: absolute;
+  width: 1.3px;
+  z-index: 1;
+}
+
+/* 線のアニメーション */
+@keyframes scroll {
+  0% {
+    transform: translateX(-50%) scale(1, 0);
+    transform-origin: center top;
   }
+  50% {
+    transform: translateX(-50%) scale(1, 1);
+    transform-origin: center top;
+  }
+  51% {
+    transform: translateX(-50%) scale(1, 1);
+    transform-origin: center bottom;
+  }
+  100% {
+    transform: translateX(-50%) scale(1, 0);
+    transform-origin: center bottom;
+  }
+}
+.mc .works-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+.mc .works-item {
+  margin-bottom: 100px;
+}
+.mc .works-list img {
+  width: 70%;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform .3s, box-shadow .3s;
+}
+.mc .works-list img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.mc .works-name {
+  margin: 20px 0;
+}
+.mc .works-name span {
+  display: inline;
+  font-size: 14px;
+  color: #666;
+  border: #666 1px solid;
+  border-radius: 20px;
+  padding: 2px 10px;
+  margin-right: 25px;
+}
 
 /*--------------------------------
  footer
@@ -159,6 +248,7 @@ li {
   background-color: #333;
   padding: 20px 0;
   text-align: center;
+  align-items: center;
   font-size: 14px;
   color: #fff;
 }
