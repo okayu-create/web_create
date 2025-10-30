@@ -54,7 +54,7 @@ li {
   gap: 10px;
   height: 100vh;
   grid-template: 
-    "nav mc" 80px
+    "mv nav" 80px
     "mv mc" 1fr /
     1fr 1fr;
 }
@@ -118,7 +118,6 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 90px - 20px);
 }
 .mv-container {
   position: relative;
@@ -135,7 +134,7 @@ li {
   font-family: 'zen old mincho', serif;
   padding: 40px 0;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   overflow: auto;
 }
 .mc .catchcopy {
