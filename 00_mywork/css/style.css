@@ -45,16 +45,17 @@ li {
   content: "";
   width: 30%;
 }
+.mc-container {
+  padding: 0 40px;
+}
 
 /*--------------------------------
   layout
 ---------------------------------*/
 .layout {
   display: grid;
-  gap: 10px;
   height: 100vh;
   grid-template: 
-    "mv nav" 80px
     "mv mc" 1fr /
     1fr 1fr;
 }
@@ -63,7 +64,6 @@ li {
   nav
 --------------------------------*/
 .gnav {
-  grid-area: nav;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,6 +118,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 .mv-container {
   position: relative;
@@ -132,7 +133,7 @@ li {
 .mc {
   grid-area: mc;
   font-family: 'zen old mincho', serif;
-  padding: 40px 0;
+  padding-top: 40px;
   text-align: center;
   font-size: 20px;
   overflow: auto;
@@ -212,9 +213,6 @@ li {
     transform: translateX(-50%) scale(1, 0);
     transform-origin: center bottom;
   }
-}
-.mc .works-container {
-  padding: 0 40px;
 }
 .mc .works-list {
   display: grid;
