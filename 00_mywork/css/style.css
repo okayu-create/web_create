@@ -12,8 +12,11 @@ body {
 a {
   transition: opacity .3s;
   text-decoration: none;
+  color: #333;
 }
-
+a :hover {
+  opacity: 0.6;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -90,7 +93,6 @@ li {
   font-weight: bold;
   display: inline-block;
   padding: 5px 0;
-  color: #333;
   text-decoration: none;
   transition: color .3s;
   letter-spacing: .05em;
@@ -216,8 +218,8 @@ li {
 }
 .mc .works-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 60px;
   padding: 0 20px;
 }
 .mc .works-list img {
@@ -243,7 +245,6 @@ li {
   font-weight: bold;
   margin-top: 10px;
 }
-
 .mc .works-name span {
   display: block;
   width: fit-content;
@@ -254,6 +255,43 @@ li {
   padding: 2px 10px;
   margin-right: 25px;
   margin-bottom: 10px;
+}
+.detail {
+  font-size: 14px;
+  width: fit-content;
+  margin: 20px 0 20px auto;
+  text-align: center;
+}
+.detail-btn {
+  cursor: pointer;
+  background: #fff;
+  color: #333;
+  border: #333 1px solid;
+  padding: 10px 20px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.detail-btn::after {
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1; 
+}
+.detail-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+.detail-btn:hover::after {
+  transform: scale(1, 1);
 }
 
 /*--------------------------------
@@ -288,7 +326,6 @@ li {
     gap: 0;
     height: 100vh;
     grid-template: 
-      "nav" 60px
       "mc" 1fr /
       1fr;
   }
