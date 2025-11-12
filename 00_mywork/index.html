@@ -13,76 +13,79 @@
 </head>
 
 <body>
-  <div class="layout">
+  <div class="l-grid">
 
     <!-- mainvisual -->
-    <div class="mv">
-      <div class="mv-container"></div>
+    <div class="l-grid__mv p-mv">
+      <div class="p-mv__container"></div>
     </div>
     <!-- /mainvisual -->
 
     <!-- maincontent -->    
-    <div class="mc">
-      <nav class="gnav">
-        <ul class="gnav-list">
-          <li class="gnav-item"><a href="#works">WORKS</a></li>
-          <li class="gnav-item"><a href="#about">ABOUT</a></li>
-          <li class="gnav-item"><a href="#skill">SKILL</a></li>
-          <li class="gnav-item"><a href="#contact">CONTACT</a></li>
+    <div class="l-grid__mc p-mc">
+      <nav class="c-nav u-visually-hidden-sp">
+        <ul class="c-nav__list">
+          <li class="c-nav__item"><a class="c-nav__link" href="#works">WORKS</a></li>
+          <li class="c-nav__item"><a class="c-nav__link" href="#about">ABOUT</a></li>
+          <li class="c-nav__item"><a class="c-nav__link" href="#skill">SKILL</a></li>
+          <li class="c-nav__item"><a class="c-nav__link" href="#contact">CONTACT</a></li>
         </ul>
       </nav>
 
       <!-- content title -->
-      <section class="catchcopy">
-        <p class="catchcopy-text">
+      <section class="c-catchcopy">
+        <p class="c-catchcopy__text">
           丁寧に、誠実に、<br>
           　　確かなかたちを。
         </p>
-        <div class="scroll">
+        <div class="c-scroll">
           <span>Scroll</span>
         </div>        
       </section>
 
       <section id="works">
-        <div class="mc-container">
-          <h2 class="sec-title">WORKS</h2>
-          <div class="works-list">
-            <a class="works-item" href="http://wordpress-learning-202501.com/dental-clinic/">
-              <img src="img/works/work-clinic.PNG" alt="html1" />
-              <p class="works-name"><span>オリジナルサイト</span>歯科クリニック</p>
+        <div class="l-container">
+          <h2 class="c-section-title">WORKS</h2>
+          <div class="c-works">
+            <a class="c-works__item" href="http://wordpress-learning-202501.com/dental-clinic/">
+              <img class="c-works__img" src="img/works/work-clinic.PNG" alt="html1" />
+              <div class="c-works__name">
+                <span class="c-works__tag">オリジナルサイト</span>
+                <p class="c-works__title">歯科クリニック</p>
+              </div>
             </a>
-            <a class="works-item" href="https://orchid194252.studio.site/">
-              <img src="img/works/work-studio1.PNG" alt="studio1" />
-              <p class="works-name"><span>Studio</span>コーポレートサイト</p>
+            <a class="c-works__item" href="https://orchid194252.studio.site/">
+              <img class="c-works__img" src="img/works/work-studio1.PNG" alt="studio1" />
+              <div class="c-works__name">
+                <span class="c-works__tag">Studio</span>
+                <p class="c-works__title">コーポレートサイト</p>
+              </div>
             </a>
-            <a class="works-item" href="https://brown394422.studio.site/">
-              <img src="img/works/work-studio2.png" alt="studio2" />
-              <p class="works-name"><span>Studio</span>セミナーLP</p>
+            <a class="c-works__item" href="https://brown394422.studio.site/">
+              <img class="c-works__img" src="img/works/work-studio2.png" alt="studio2" />
+              <div class="c-works__name">
+                <span class="c-works__tag">Studio</span>
+                <p class="c-works__title">セミナーLP</p>
+              </div>
             </a>
-            <a class="works-item" href="https://magenta158845.studio.site/">
-              <img src="img/works/work-studio3.PNG" alt="studio3" />
-              <p class="works-name"><span>Studio</span>スクール紹介サイト</p>
+            <a class="c-works__item" href="https://magenta158845.studio.site/">
+              <img class="c-works__img" src="img/works/work-studio3.PNG" alt="studio3" />
+              <div class="c-works__name">
+                <span class="c-works__tag">Studio</span>
+                <p class="c-works__title">スクール紹介サイト</p>
+              </div>
             </a>
           </div>
         </div>
       </section>
-
-      <section id="about">
-        <div class="mc-container">
-          <h2 class="sec-title">ABOUT</h2>
-        </div>
-      </section>
-
       <!-- footer -->
-      <footer class="footer">
+      <footer class="c-footer">
         <div class="copyright">&copy;Oky Design</div>
       </footer>
       <!-- /footer -->
     
     </div>
     <!-- /maincontent -->
-
-
 
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
