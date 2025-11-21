@@ -65,6 +65,7 @@ li {
 
 .l-main {
   margin-top: 80px;
+  position: relative;
 }
 
 
@@ -308,15 +309,47 @@ li {
   overflow: auto;
 }
 
+/* ヒーローエリアコンテンツ */
 .p-hero {
+  inset: 0 0 auto 0;
+  height: 100vh;
   background-image: url(../img/about-mv.jpg);
   background-attachment: fixed;
   background-size: cover;
-  background-position: top;
+  background-position: center top;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
+}
+
+/* アバウトコンテンツ */
+.p-aboutcontent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 20px;
+}
+
+.p-namespace {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.p-namae {
+  font-size: 1.5rem;
+  letter-spacing: 1.5rem;
+}
+
+.p-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.p-name span {
+  color: rgb(255, 162, 39);
+}
+
+.p-aboutcontent__img {
+  border-radius: 50%;
+  width: 400px;
+  height: 500px;
 }
 
 /*================================
