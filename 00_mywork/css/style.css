@@ -90,7 +90,7 @@ li {
 }
 
 .c-nav__item {
-  width: 250px;
+  width: 100%;
   text-align: center;
   transition: padding 0.7s ease-out;
 }
@@ -113,7 +113,7 @@ li {
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 0 50px;
-  transition: background-size 0.3s;
+  transition: background-size 0.7s;
 }
 .c-nav__link:hover {
   color:#fff;
@@ -373,6 +373,11 @@ li {
   display: block;
   align-self: center;
   margin: 0 0.5em;
+}
+
+.p-skils__item {
+  display: grid;
+  
 }
 
 /*================================
