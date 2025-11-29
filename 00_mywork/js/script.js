@@ -1,4 +1,7 @@
 $(function () {
+/*=================================================
+スクロールアニメーション
+===================================================*/
   //ページ内スクロール
   var navHeight = $(".c-nav").outerHeight();
 
@@ -17,4 +20,25 @@ $(function () {
     $(".p-mc").animate({ scrollTop: 0 }, 800);
     return false;
   });
+});
+
+/*=================================================
+ハンバーガーメニュー
+===================================================*/
+$('.c-hamburger').on('click', function() {
+    if ($('#l-header').hasClass('c-open')) {
+    $('#l-header').removeClass('c-open');
+    } else {
+    $('#l-header').addClass('c-open');
+    }
+});
+
+// #maskのエリアをクリックした時にメニューを閉じる
+$('#mask').on('click', function() {
+    $('#l-header').removeClass('c-open');
+});
+
+// リンクをクリックした時にメニューを閉じる
+$('#l-nav a').on('click', function() {
+    $('#l-header').removeClass('c-open');
 });

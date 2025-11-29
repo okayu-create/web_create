@@ -8,22 +8,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="css/ress.css" media="all" rel="stylesheet" type="text/css" />
     <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
     <!-- header -->
-    <div class="l-header">
-        <nav class="c-nav u-visually-hidden-sp">
-            <ul class="c-nav__list">
-                <li class="c-nav__item"><a class="c-nav__link" href="index.html">HOME</a></li>
-                <li class="c-nav__item"><a class="c-nav__link" href="about.html">ABOUT</a></li>
-                <li class="c-nav__item"><a class="c-nav__link" href="index.html#works">WORKS</a></li>
-                <li class="c-nav__item"><a class="c-nav__link" href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>        
+    <header id="l-header">
+    <nav id="l-nav" class="c-nav u-visually-hidden-sp">
+        <ul class="c-nav__list">
+            <li class="c-nav__item"><a class="c-nav__link" href="index.html">HOME</a></li>
+            <li class="c-nav__item"><a class="c-nav__link" href="about.html">ABOUT</a></li>
+            <li class="c-nav__item"><a class="c-nav__link" href="index.html#works">WORKS</a></li>
+            <li class="c-nav__item"><a class="c-nav__link" href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="c-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+    <div id="mask"></div>
+        
+    </header>
     <!-- /header -->
     
     <div class="l-main">
@@ -61,6 +70,18 @@
                             <img src="img/skills/icon_js.png" />
                             <p>JavaScript</p>
                         </div>
+                        <div class="p-skils__card">
+                            <img src="img/skills/icon_wordpress.png" />
+                            <p>WordPress</p>
+                        </div>
+                        <div class="p-skils__card">
+                            <img src="img/skills/icon_python.png" />
+                            <p>Python</p>
+                        </div>
+                        <div class="p-skils__card">
+                            <img src="img/skills/icon_c.png" />
+                            <p>C言語</p>
+                        </div>
                     </div>
                 </div>    
                 </div>
@@ -68,5 +89,7 @@
             
         </div>
     </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type='text/javascript' src="js/script.js"></script>
 </body>
+</html>
