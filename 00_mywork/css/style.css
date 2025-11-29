@@ -56,18 +56,18 @@ li {
 }
 
 .l-main {
-  margin-top: 80px;
   position: relative;
 }
 
 #l-header {
   position: fixed;
   top: 0;
-  right: 0;
-  background-color: #fff;
-  z-index: 1;
+  left: 0;
+  width: 100%;
   height: 80px;
-  padding: 20px;
+  background-color: transparent;
+  z-index: 10;
+  padding: 30px;
 }
 
 /*================================
@@ -79,7 +79,6 @@ li {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 80px;
   width: 100%;
 }
 
@@ -145,7 +144,7 @@ li {
   display: flex;
   justify-content: center;
   margin-bottom: 400px;
-  padding: 60px 20px;
+  padding: 100px 20px;
 }
 
 .c-catchcopy__text {
@@ -321,7 +320,7 @@ li {
   justify-content: center;
   align-items: start;
   height: 100vh;
-  padding: 80px 100px;
+  padding: 80px 40px;
   margin: 0 auto;
 }
 
@@ -330,7 +329,7 @@ li {
   flex-direction: column;
   text-align: left;
   width: 30%;
-  margin-right: 40px;
+  margin-right: 2%;
 }
 
 .p-namae {
@@ -361,7 +360,11 @@ li {
 .p-career {
   line-height: 2.2;
   letter-spacing: 0.5px;
-  font-size: 1.2rem; 
+  font-size: calc(1.4vw+1.8rem); 
+}
+.p-career span {
+  font-weight: bold;
+  margin-right: 10px;
 }
 
 .p-about__title {
@@ -561,6 +564,38 @@ li {
     font-size: 12px;
     padding: 1px 8px;
     margin: 0 30px;
+  }
+
+  .p-aboutcontent {
+    flex-direction: column;
+    padding: 40px 20px;
+    height: auto;
+  }
+  .p-namespace {
+    width: 100%;
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+  .p-namespace img {
+    padding: 20px;
+  }
+  .p-textspace {
+    width: 100%;
+  }
+  .p-about__title {
+    font-size: 1.5rem;
+    margin: 30px 0;
+  }
+  .p-career {
+    font-size: calc(1.25vw+1.5rem);
+  }
+  .p-career span {
+    display: block;
+    margin-top: 20px;
+  }
+  .p-skils__item {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 
   .c-footer {
