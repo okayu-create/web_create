@@ -37,6 +37,7 @@ li {
 .l-grid {
   display: grid;
   height: 100vh;
+  position: relative;
   grid-template: 
     "mv mc" 1fr /
     1fr 1fr;
@@ -54,39 +55,38 @@ li {
   padding: 0 40px;
 }
 
-.l-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 50%;
-  background-color: transparent;
-  z-index: 1;
-}
-
 .l-main {
-  margin-top: 80px;
   position: relative;
 }
 
+#l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: transparent;
+  z-index: 10;
+  padding: 30px;
+}
 
 /*================================
   Component - 再利用可能なコンポーネント
 =================================*/
 
 /* ナビゲーション */
-.c-nav {
+#l-nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
-  padding-top: 30px;
 }
 
 .c-nav__list {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 120px;
+  gap: 40px;
 }
 
 .c-nav__item {
@@ -144,7 +144,7 @@ li {
   display: flex;
   justify-content: center;
   margin-bottom: 400px;
-  padding: 60px 20px;
+  padding: 100px 20px;
 }
 
 .c-catchcopy__text {
@@ -272,7 +272,6 @@ li {
   align-items: center;
   font-size: 14px;
   padding: 20px 0;
-  margin-top: 60px;
 }
 
 /*================================
@@ -319,8 +318,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: start;
-  height: 100vh;
-  padding: 80px 20px;
+  padding: 80px 40px;
   margin: 0 auto;
 }
 
@@ -328,7 +326,8 @@ li {
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-right: 40px;
+  width: 30%;
+  margin-right: 2%;
 }
 
 .p-namae {
@@ -352,10 +351,18 @@ li {
   margin-top: 20px;
 }
 
+.p-textspace {
+  width: 60%;
+}
+
 .p-career {
   line-height: 2.2;
   letter-spacing: 0.5px;
-  font-size: 1.2rem; 
+  font-size: calc(1.4vw+1.8rem); 
+}
+.p-career span {
+  font-weight: bold;
+  margin-right: 10px;
 }
 
 .p-about__title {
@@ -363,7 +370,6 @@ li {
   align-items: center;
   gap: 1em;
 }
-
 .p-about__title::before,
 .p-about__title::after {
   content: "";
@@ -375,10 +381,14 @@ li {
   margin: 0 0.5em;
 }
 
+.p-skils .p-about__title {
+  margin-top: 40px;
+}
 .p-skils__item {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
+  margin-top: 20px;
 }
 .p-skils__card {
   display: flex;
@@ -394,10 +404,6 @@ li {
 =================================*/
 .u-visually-hidden-pc {
   display: none;
-}
-
-.u-visually-hidden-sp {
-  display: block;
 }
 
 /*================================
@@ -419,7 +425,7 @@ li {
     gap: 0;
     height: 100vh;
     grid-template: 
-      "nav" 60px
+      "nav" 20px
       "mc" 1fr /
       1fr;
   }
@@ -428,22 +434,94 @@ li {
     display: none;
   }
 
+  #l-header {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+  }
+
   /* Component調整 */
-  .c-nav__list {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
+  #l-nav {
+    width: 100%;
+    height: 40%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    overflow-y: auto;
+    transition: 0.5s;
+    z-index: 20;
   }
-
-  .c-nav__item:hover {
-    padding: 0 10px;
+  .c-open #l-nav {
+    left: 0;
+    opacity: 1;
   }
-
-  .c-nav__link {
-    font-size: 12px;
-    padding: 8px 12px;
+  .c-open .c-nav__list {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .c-open .c-nav__item {
+    width: 100%;
+    text-align: center;
+  }
+  .c-hamburger {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 22px;
+    right: 18px;
+    transition: 0.5s;
+    z-index: 30;
+  }
+  .c-hamburger span {
+    width: 30px;
+    height: 2px;
+    background-color: #121212;
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+    left: 0;
+    transition: 0.5s;
+  }
+  .c-hamburger span:nth-child(1) {
+    top: 4px;
+  }
+  .c-hamburger span:nth-child(2) {
+    top: 14px;
+  }
+  .c-hamburger span:nth-child(3) {
+    bottom: 4px;
+  }
+  .c-open .c-hamburger span {
+    background-color: #000;
+  }
+  .c-open .c-hamburger span:nth-child(1) {
+    transform: translateY(10px) rotate(-315deg);
+  }
+  .c-open .c-hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .c-open .c-hamburger span:nth-child(3) {
+    transform: translateY(-10px) rotate(315deg);
+  }
+  #mask {
+    display: none;
+    transition: 0.5s;
+  }
+  .c-open #mask {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    cursor: pointer;
+    display: block;
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
   }
 
   .c-catchcopy {
@@ -489,7 +567,40 @@ li {
     margin: 0 30px;
   }
 
+  .p-aboutcontent {
+    flex-direction: column;
+    padding: 40px 20px;
+    height: auto;
+  }
+  .p-namespace {
+    width: 100%;
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+  .p-namespace img {
+    padding: 20px;
+  }
+  .p-textspace {
+    width: 100%;
+  }
+  .p-about__title {
+    font-size: 1.5rem;
+    margin: 30px 0;
+  }
+  .p-career {
+    font-size: calc(1.25vw+1.5rem);
+  }
+  .p-career span {
+    display: block;
+    margin-top: 20px;
+  }
+  .p-skils__item {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
   .c-footer {
+    margin-top: 30px;
     padding: 15px 0;
     font-size: 12px;
   }

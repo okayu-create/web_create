@@ -23,13 +23,23 @@
 
     <!-- maincontent -->    
     <div class="l-grid__mc p-mc">
-      <nav class="c-nav">
-        <ul class="c-nav__list">
-          <li class="c-nav__item"><a class="c-nav__link" href="about.html">ABOUT</a></li>
-          <li class="c-nav__item"><a class="c-nav__link" href="#works">WORKS</a></li>
-          <li class="c-nav__item"><a class="c-nav__link" href="#contact">CONTACT</a></li>
-        </ul>
-      </nav>
+      <header id="l-header">
+        <nav id="l-nav" class="c-nav u-visually-hidden-sp">
+          <ul class="c-nav__list">
+            <li class="c-nav__item"><a class="c-nav__link" href="about.html">ABOUT</a></li>
+            <li class="c-nav__item"><a class="c-nav__link" href="#works">WORKS</a></li>
+            <li class="c-nav__item"><a class="c-nav__link" href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <div class="c-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="mask"></div>
+        
+      </header>
 
       <!-- content title -->
       <section class="c-catchcopy">
@@ -46,7 +56,7 @@
         <div class="l-container">
           <h2 class="c-section-title">WORKS</h2>
           <div class="c-works">
-            <a class="c-works__item" href="http://wordpress-learning-202501.com/dental-clinic/">
+            <a class="c-works__item" href="http://wordpress-learning-202501.com/dental-clinic/" target="_blank">
               <img class="c-works__img" src="img/works/work-clinic.PNG" alt="html1" />
               <div class="c-works__name">
                 <span class="c-works__tag">オリジナルサイト</span>
