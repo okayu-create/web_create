@@ -39,7 +39,6 @@ li {
   height: 100vh;
   position: relative;
   grid-template:
-    "mv header" 80px
     "mv mc" 1fr /
     1fr 1fr;
 }
@@ -67,8 +66,7 @@ li {
 #l-header {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 100%;
+  left: 0;
   z-index: 10;
   text-align: center;
   padding: 20px;
@@ -97,7 +95,7 @@ li {
 /* ナビゲーション */
 #l-nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
 }
