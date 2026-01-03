@@ -16,23 +16,31 @@
 <body>
     <!-- header -->
     <header id="l-header">
-    <nav id="l-nav" class="c-nav u-visually-hidden-sp">
+        <nav id="l-nav" class="c-nav u-visually-hidden-sp">
+            <ul class="c-nav__list">
+                <li class="c-nav__item"><a class="c-nav__link" href="index.html">HOME</a></li>
+                <li class="c-nav__item"><a class="c-nav__link" href="about.html">ABOUT</a></li>
+                <li class="c-nav__item"><a class="c-nav__link" href="#skills">SKILLS</a></li>
+                <li class="c-nav__item"><a class="c-nav__link" href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>  
+        <div class="c-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="mask"></div>
+    </header>
+    <div id="l-fixed-about__header">
+        <nav id="l-nav" class="c-nav u-visually-hidden-sp">
         <ul class="c-nav__list">
             <li class="c-nav__item"><a class="c-nav__link" href="index.html">HOME</a></li>
             <li class="c-nav__item"><a class="c-nav__link" href="about.html">ABOUT</a></li>
-            <li class="c-nav__item"><a class="c-nav__link" href="index.html#works">WORKS</a></li>
+            <li class="c-nav__item"><a class="c-nav__link" href="#skills">SKILLS</a></li>
             <li class="c-nav__item"><a class="c-nav__link" href="#contact">CONTACT</a></li>
         </ul>
-    </nav>
-
-    <div class="c-hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        </nav>
     </div>
-    <div id="mask"></div>
-        
-    </header>
     <!-- /header -->
     
     <div class="l-main">
@@ -50,12 +58,17 @@
             <div class="p-textspace">
                 <div class="p-career">
                     <h2 class="p-about__title">私について</h2>
+                    <table>
+                        <tr>
+                            <td>1995年</td>
+                            <td>大分県大分市生まれ</td>
+                        </tr>
+                    </table>
                     <p><span>1995年</span>大分県大分市生まれ</p>
                     <p><span>2020年</span>大学院卒業後、理科教諭として公立高校に勤務。</p>
                     <p><span>2023年</span>独立系SIer企業に転職し、組込み系ソフトウェア開発に携わる。</p>
-                    <p><span>現在</span>組込み系ソフトウェアの開発だけでなく、Webアプリケーションの開発にも興味を持ち、</p>
-                    <p>独学でWebデザインのスキルを学び、現在はコーポレートサイトの制作やLP制作を生業としています。</p>
-                <div class="p-skils">
+                    <p><span>現在</span>組込み系ソフトウェアの開発だけでなく、Webアプリケーションの開発にも興味を持ち、独学でWebデザインのスキルを学び、現在はコーポレートサイトの制作やLP制作を生業としています。</p>
+                <div id="skills" class="p-skils">
                     <h2 class="p-about__title">スキル</h2>
                     <div class="p-skils__item">
                         <div class="p-skils__card">

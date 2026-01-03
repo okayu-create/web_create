@@ -38,13 +38,18 @@ li {
   display: grid;
   height: 100vh;
   position: relative;
-  grid-template: 
+  grid-template:
+    "mv header" 80px
     "mv mc" 1fr /
     1fr 1fr;
 }
 
 .l-grid__mv {
   grid-area: mv;
+}
+
+.l-grid__header {
+  grid-area: header;
 }
 
 .l-grid__mc {
@@ -60,20 +65,35 @@ li {
 }
 
 #l-header {
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
-  height: 80px;
-  background-color: transparent;
   z-index: 10;
-  padding: 30px;
+  text-align: center;
+  padding: 20px;
+  background-color: transparent;
+}
+
+#l-fixed-about__header {
+  position: fixed;
+  top: -80px;
+  width: 100%;
+  padding: 20px;
+  color: #333;
+  background: #fff;
+  box-sizing: border-box;
+  transition: .5s;
+}
+
+#l-fixed-about__header.is-show-about {
+  top: 0;
+  z-index: 10;
 }
 
 /*================================
   Component - 再利用可能なコンポーネント
 =================================*/
-
 /* ナビゲーション */
 #l-nav {
   display: flex;
@@ -100,14 +120,10 @@ li {
   font-size: 18px;
   font-weight: bold;
   display: inline-block;
-  padding: 5px 0;
-  color: #333;
+  color: #000;
   text-decoration: none;
   transition: color .3s;
   letter-spacing: .05em;
-}
-
-.c-nav__link {
   padding: 10px 20px;
   background-image: linear-gradient(#333, #333);
   background-repeat: no-repeat;
@@ -357,8 +373,7 @@ li {
 
 .p-career {
   line-height: 2.2;
-  letter-spacing: 0.5px;
-  font-size: calc(1.4vw+1.8rem); 
+  font-size: calc(1.0vw + 0.5rem);
 }
 .p-career span {
   font-weight: bold;
@@ -435,9 +450,14 @@ li {
   }
 
   #l-header {
+    position: fixed;
     width: 100%;
     height: 60px;
     background-color: #fff;
+  }
+
+  #l-fixed-about__header {
+    display: none;
   }
 
   /* Component調整 */
@@ -588,7 +608,7 @@ li {
     margin: 30px 0;
   }
   .p-career {
-    font-size: calc(1.25vw+1.5rem);
+    font-size: calc(1.0vw + 1.0rem);
   }
   .p-career span {
     display: block;

@@ -10,8 +10,14 @@ $(function () {
     var target = $(href == "#" || href == "" ? "html" : href);
     var position = target.offset().top - navHeight;
     
-    // メインコンテンツ要素をスクロール
-    $(".p-mc").animate({ scrollTop: position }, 800, "swing");
+    // .p-mc要素が存在する場合と存在しない場合で分岐
+    if ($(".p-mc").length > 0) {
+      // メインコンテンツ要素をスクロール
+      $(".p-mc").animate({ scrollTop: position }, 800, "swing");
+    } else {
+      // ウィンドウをスクロール（about.html用）
+      $("html, body").animate({ scrollTop: position }, 800, "swing");
+    }
     return false;
   });
 
@@ -42,3 +48,22 @@ $('#mask').on('click', function() {
 $('#l-nav a').on('click', function() {
     $('#l-header').removeClass('c-open');
 });
+
+/*=================================================
+ヘッダー固定
+===================================================*/
+$(window).on('scroll', function() {
+    var scrollTop = $(window).scrollTop();
+    var fixedHeader = $('#l-fixed-about__header');
+    
+    if (scrollTop > 300) {
+        if (!fixedHeader.hasClass('is-show-about')) {
+            fixedHeader.addClass('is-show-about');
+        }
+    } else {
+        if (fixedHeader.hasClass('is-show-about')) {
+            fixedHeader.removeClass('is-show-about');
+        }
+    }
+});
+
